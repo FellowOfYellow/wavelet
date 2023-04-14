@@ -6,9 +6,9 @@ class Handler implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
     // various requests.
     ArrayList<String> strings = new ArrayList<String>();
-    String returnedString = "";
 
     public String handleRequest(URI url) {
+        ArrayList<String> returnedString = new ArrayList<String>();
         System.out.println("Path: " + url.getPath());
         if (url.getPath().contains("/add")) {
             String[] parameters = url.getQuery().split("=");
@@ -21,10 +21,10 @@ class Handler implements URLHandler {
             String[] parameters = url.getQuery().split("=");
             for (String thing : strings){
                 if(thing.contains(parameters[1])){
-                    returnedString += thing + " ";
+                    returnedString.add(thing);
                 }
             }
-            return String.format("Search results: %s", returnedString);
+            return String.format("Search results: %s", returnedString.toString());
         }
         return "404 Not Found!";
     }
