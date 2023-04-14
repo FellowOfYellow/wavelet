@@ -24,7 +24,7 @@ class Handler implements URLHandler {
                     returnedString += parameters[1] + "\n";
                 }
             }
-            return String.format("Search results:\n %s", returnedString);
+            return String.format("Search results:\n%s", returnedString);
         }
         return "404 Not Found!";
     }
