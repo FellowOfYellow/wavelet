@@ -21,7 +21,7 @@ class Handler implements URLHandler {
             String[] parameters = url.getQuery().split("=");
             for (String thing : strings){
                 if(thing.contains(parameters[1])){
-                    returnedString += parameters[1] + " ";
+                    returnedString += thing + " ";
                 }
             }
             return String.format("Search results: %s", returnedString);
