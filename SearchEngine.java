@@ -6,7 +6,7 @@ class Handler implements URLHandler {
     // The one bit of state on the server: a number that will be manipulated by
     // various requests.
     ArrayList<String> strings = new ArrayList<String>();
-    String returnedString;
+    String returnedString = "";
 
     public String handleRequest(URI url) {
         System.out.println("Path: " + url.getPath());
